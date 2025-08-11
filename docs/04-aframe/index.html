@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script type="module" crossorigin src="/locarPR16test/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/locarPR16test/assets/locar.es-DTthYILY.js"></script>
-  <script type="module" crossorigin src="/locarPR16test/assets/locar-aframe.es-B2Kf3FYL.js"></script>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <style>
+    #gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0008;backdrop-filter:blur(4px);z-index:9999}
+    #gate button{font-size:18px;padding:12px 20px;border-radius:12px;border:none}
+  </style>
+  <script type="module" crossorigin src="/locarPR16test/assets/04-aframe-Blp1tYdr.js"></script>
+  <link rel="modulepreload" crossorigin href="/locarPR16test/assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="/locarPR16test/assets/locar.es-DTthYILY.js">
+  <link rel="modulepreload" crossorigin href="/locarPR16test/assets/locar-aframe.es-B2Kf3FYL.js">
 </head>
 <body>
-<main>
-<a-scene locar-webcam>
-<a-camera look-controls='magicWindowTrackingEnabled: false' wasd-controls locar-camera='simulateLatitude: 51.93; simulateLongitude: 7.65'></a-camera>
-<a-box scale='20 20 20' locar-entity-place='latitude: 51.92; longitude: 7.65' material='color: blue' ></a-box>
-<a-box scale='20 20 20' locar-entity-place='latitude: 51.93; longitude: 7.64' material='color: yellow'></a-box>
-<a-box scale='20 20 20' locar-entity-place='latitude: 51.94; longitude: 7.65' material='color: red' ></a-box>
-<a-box scale='20 20 20' locar-entity-place='latitude: 51.93; longitude: 7.66' material='color: green'></a-box>
-</a-scene>
-</main>
+  <div id="gate">
+    <button id="enableSensors">AR starten</button>
+  </div>
+
+  <main>
+    <a-scene> <!-- <a-scene locar-webcam>  (erst später aktivieren) -->
+      <a-camera look-controls="magicWindowTrackingEnabled: false" wasd-controls>
+        <!-- locar-camera kommt erst nach dem Tap dazu -->
+      </a-camera>
+
+      <a-box scale="20 20 20" locar-entity-place="latitude: 51.92; longitude: 7.65" material="color: blue"></a-box>
+      <a-box scale="20 20 20" locar-entity-place="latitude: 51.93; longitude: 7.64" material="color: yellow"></a-box>
+      <a-box scale="20 20 20" locar-entity-place="latitude: 51.94; longitude: 7.65" material="color: red"></a-box>
+      <a-box scale="20 20 20" locar-entity-place="latitude: 51.93; longitude: 7.66" material="color: green"></a-box>
+    </a-scene>
+  </main>
 </body>
 </html>
