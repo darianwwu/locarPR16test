@@ -3,10 +3,11 @@
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <style>
-    #gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0008;backdrop-filter:blur(4px);z-index:9999}
-    #gate button{font-size:18px;padding:12px 20px;border-radius:12px;border:none}
+    #gate{position:fixed;inset:0;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;background:#000a;color:#fff;z-index:9999}
+    #gate button{font-size:18px;padding:12px 18px;border-radius:12px;border:none}
+    #status{opacity:.85;font-family:system-ui,Arial}
   </style>
-  <script type="module" crossorigin src="/locarPR16test/assets/04-aframe-Blp1tYdr.js"></script>
+  <script type="module" crossorigin src="/locarPR16test/assets/04-aframe-K_VtdFjN.js"></script>
   <link rel="modulepreload" crossorigin href="/locarPR16test/assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="/locarPR16test/assets/locar.es-DTthYILY.js">
   <link rel="modulepreload" crossorigin href="/locarPR16test/assets/locar-aframe.es-B2Kf3FYL.js">
@@ -14,14 +15,15 @@
 <body>
   <div id="gate">
     <button id="enableSensors">AR starten</button>
+    <div id="status">Bereit</div>
   </div>
 
   <main>
-    <a-scene> <!-- <a-scene locar-webcam>  (erst später aktivieren) -->
-      <a-camera look-controls="magicWindowTrackingEnabled: false" wasd-controls>
-        <!-- locar-camera kommt erst nach dem Tap dazu -->
-      </a-camera>
+    <!-- A-Frame Loading Screen aus -->
+    <a-scene loading-screen="enabled: false">
+      <a-camera look-controls="magicWindowTrackingEnabled: false" wasd-controls></a-camera>
 
+      <!-- deine Boxes -->
       <a-box scale="20 20 20" locar-entity-place="latitude: 51.92; longitude: 7.65" material="color: blue"></a-box>
       <a-box scale="20 20 20" locar-entity-place="latitude: 51.93; longitude: 7.64" material="color: yellow"></a-box>
       <a-box scale="20 20 20" locar-entity-place="latitude: 51.94; longitude: 7.65" material="color: red"></a-box>
